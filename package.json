@@ -1,11 +1,24 @@
 {
   "name": "selectpg",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/josielmoraes/selectRadis.git"
+  },
+  "bugs": {
+    "url": "https://github.com/josielmoraes/selectRadis/issues"
+  },
+  "homepage": "https://github.com/josielmoraes/selectRadis#readme",
+  "description": "",
+  "dependencies": {
+    "json2xls": "^0.1.2",
+    "pg": "^7.11.0",
+    "xlsx": "^0.14.3"
+  }
 }
