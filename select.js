@@ -11,9 +11,9 @@ var opt={
 }
 const conn = new Client({
   user: 'postgres',
-  host: 'localhost',
+  host: '200.17.60.228',
   database: 'incra',
-  //password: '@n4OXcpK4Q8',
+  password: '@n4OXcpK4Q8',
   port: 5432,
 })
 var options=[
@@ -126,7 +126,7 @@ async function f() {
   async function book_append_table(wb, name,sheet, where) {
     var string=  "SELECT tmp.* FROM  radis_view.v_geral,geo_din.loteamento,radis.radis, " +name+ " as tmp "+
     "where tmp.cod_coleta=radis_view.v_geral.cod_coleta and radis_view.v_geral.cod_coleta=geo_din.loteamento.cod_coleta and radis.radis.cod=geo_din.loteamento.cod_coleta "+
-    " and (radis_view.v_geral.cod_pa='MT0262000' or radis_view.v_geral.cod_pa='MT0223000' or radis_view.v_geral.cod_pa='MT0689000' or radis_view.v_geral.cod_pa='MG0289000' or radis_view.v_geral.cod_pa='MG0116000' or radis_view.v_geral.cod_pa='MG0085000') "+where+' ' ;
+    " and radis_view.v_geral.cod_pa like 'MT%'  "+where+' ' ;
     console.log(string)
     var r_f = await conn.query(string );
     //console.log(r_f)
